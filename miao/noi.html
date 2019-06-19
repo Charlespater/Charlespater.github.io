@@ -319,6 +319,7 @@
 
   <script id="ch0104/08" type="x">
      //判断一个数能否同时被3和5整除
+     //判断能否被15整除就可以了
      var a =Number(prompt('输入：'));
      if(a % 3 ==0 && a % 5 ==0)
      console.log('Yes');
@@ -328,6 +329,7 @@
 
   <script id="ch0104/09" type="X">
      //判断能否被3，5，7整除
+     //同上
      var a =Number(prompt('输入：'));
      if(a % 3 ==0 && a % 5 ==0 && a % 7==0)
      console.log('3 5 7');
@@ -597,7 +599,7 @@
 
   <script id="ch0105/06" type="x">
    var n,i;
-   var max,min;
+   var max,min; //max 可设为-infinity min = infinity
    var num,c;
    n = Number(prompt(''));
    var n1 =Number(prompt(''));
@@ -632,7 +634,7 @@
   </script>
 
 
-<script id="ch0105/08" type="x">
+  <script id="ch0105/08" type="x">
 var i ,n,sum,d,a;
 var count = 0;
 n = Number(prompt(''));
@@ -645,7 +647,7 @@ a = sum - count;
 console.log(a);
 </script>
 
-<script id="ch0105/09" type="x">
+  <script id="ch0105/09" type="x">
 var i,m,n;
 var sum=0;
 m = Number(prompt(''));
@@ -657,7 +659,7 @@ for(i=m;i<=n;i++){
 console.log(sum);
 </script>
 
-<script id="ch0105/10" type="x">
+  <script id="ch0105/10" type="x">
 var m = Number(prompt(''));
 var n = Number(prompt(''));
 var i;
@@ -669,7 +671,7 @@ for(i=m;i<=n;i++){
 console.log(sum);
 </script>
 
-<script id="ch0105/11" type="x">
+  <script id="ch0105/11" type="x">
 var k = Number(prompt(''));
 var i,n;
 var sum1=0,sum5=0,sum10=0;
@@ -685,7 +687,7 @@ for(i=1;i<=k;i++){
 console.log(sum1,sum5,sum10);
 </script>
 
-<script id="ch0105/12" type="x">
+  <script id="ch0105/12" type="x">
 var N = Number(prompt(''));
 var m = Number(prompt(''));
 var i,n;
@@ -698,7 +700,7 @@ for(i=1;i<=N;i++){
 console.log(count);
 </script>
 
-<script id="ch0105/13" type="x" >
+  <script id="ch0105/13" type="x">
   var a = Number(prompt(''));
   var n = Number(prompt(''));
   var i,sum;
@@ -710,7 +712,7 @@ console.log(count);
 </script>
 
 
-<script id="ch0105/14" type="x">
+  <script id="ch0105/14" type="x">
  var x ,n,sum;
  x=Number(prompt(''));
  n=Number(prompt(''));
@@ -722,7 +724,7 @@ console.log(count);
 
 </script>
 
-<script id="ch0105/15" type="x">
+  <script id="ch0105/15" type="x">
 var i,sum;
 var R=Number(prompt(''));
 var M=Number(prompt(''));
@@ -735,7 +737,7 @@ console.log(sum);
 </script>
 
 
-<script id="ch0105/16" type="x">
+  <script id="ch0105/16" type="x">
 var sum;
 var money=200;
 var N =Number(prompt(''));
@@ -754,9 +756,10 @@ if(i <= 20 && sum >= money){
 }
 </script>
 
-<script id="ch0105/17" type="x">
+  <script id="ch0105/17" type="x">
 //菲波那契数列!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // 1 1 2 3 5 8 13 21 34 55
+//b = a + b; a = b - a;
 var i,k,f;
 var a=0;
 var b=1;
@@ -774,7 +777,7 @@ for(i=2;i<=46;i++){
 
 
 
-<script id="ch0105/18" type="x">
+  <script id="ch0105/18" type="x">
 var n =Number(prompt(''));
 var x,y;
 var sum1=Number(prompt(''));
@@ -796,7 +799,7 @@ for(i=1;i<=n-1;i++){
 </script>
 
 
-<script id="ch0105/19" type="x">
+  <script id="ch0105/19" type="x">
  var x,y,length,n,people,T;
  var sum=0;
  n =Number(prompt(''));
@@ -812,7 +815,7 @@ for(i=1;i<=n-1;i++){
 </script>
 
 
-<script id="ch0105/20" type="x">
+  <script id="ch0105/20" type="x">
   //球落地
 var h =Number(prompt(''));
 var i;
@@ -826,7 +829,7 @@ console.log(sum,h);
 </script>
 
 
-<script id="ch0105/21" type="x">
+  <script id="ch0105/21" type="x">
   //角谷猜想
  var N =Number(prompt('输入一个正整数:'));
  var i,n;
@@ -848,7 +851,7 @@ console.log(sum,h);
 </script>
 
 
-<script id="ch0105/22" type="x" >
+  <script id="ch0105/22" type="x">
 // 津津的储蓄计划!!!!!!!!!!!!!!!!!!!
 var i,s,mother,t;
 var d=0;
@@ -877,24 +880,29 @@ console.log('-' + d);
 
 </script>
 
-<script id="ch0105/23" type="x">
-//药房管理  是否原题答案有问题
-var d,la;
+  <script id="ch0105/23" type="x">
+//药房管理  
+var d,med,last;
+var count = 0;
 var m =Number(prompt('药品总量：'));
 var n =Number(prompt('这一天取药的人数n:'));
 for(i=1;i<=n;i++){
-  var num = Number(prompt('病人取药数：'));
-  m = m - num;
-  if(m <= 0){
-  d= i;
+ med = Number(prompt("需要的药品量:"));
+ if(med > m)
+ count = count + 1;
+
+else{
+ m = m - med;//剩余库存量
+}
+if(m==0 || i ==n){ //在药品无剩余或者取药人数满的情况下结束循环
+  last = n - i + count;
   break;
-  }
-  }
-  la = n - d;
-  console.log(la);
+}
+}
+console.log(last);
 </script>
 
-<script id="ch0105/24" type="x">
+  <script id="ch0105/24" type="x">
 //正常血压
 var n =Number(prompt(''));
 var i,shou,shu;
@@ -911,8 +919,8 @@ for(i=1;i<=n;i++){
 console.log(count);
 </script>
 
-<script id="ch0105/25" type="x">
-//求特殊自然数 ！！！！！！！！！！！！大于号小于号要分清！！！！！！！！！！！！！
+  <script id="ch0105/25" type="x">
+//求特殊自然数 ！！！！！！！！！！！！大写小写要分清！！！！！！！！！！！！！
 var i,x,a,b;
 var a1,a2,a3;
 var b1,b2,b3;
@@ -932,34 +940,671 @@ for(i=1;i<=999;i++){
 }
 </script>
 
-<script id="ch0105/26">
+  <script id="ch0105/26" type="x">
 //统计满足条件的4位数个数
-
-
-</script>
-
-<script id="ch0105/26">
-
-</script>
-
-<script id="ch0105/26">
-
-</script>
-
-<script id="ch0105/26">
-
-</script>
-
-<script id="ch0105/26">
+ var n = Number(prompt('四位数的个数：'));
+ var i,a1,a2,a3,a4,b;
+ var count=0;
+ for(i=1;i<=n;i++){
+ var a = Number(prompt(''));
+ a1 =Math.floor(a / 1000);
+ a2 =Math.floor((a % 1000) / 100);
+ a3 =Math.floor((a % 100) / 10);
+ a4 = a % 10;
+ b = a4 - a1 -a2 - a3;
+ if(b>0)
+ count = count + 1;
+ }
+ console.log(count);
 
 </script>
 
-<script id="ch0105/26">
+  <script id="ch0105/27" type="x">
+var k =Number(prompt(''));
+var i;
+var Sn = 0;
+for(i=1;i<=9999;i++){
+  Sn = Sn + 1 / i;
+  if(Sn > k){
+    console.log(i);
+    break;
+  }
+
+}
+</script>
+
+  <script id="ch0105/28" type="x">
+//分离整数的各个数位
+
+ var a;
+ var N=Number(prompt('输入一个整数：'));
+ while(1){
+   if(N >= 1){
+     a = Math.floor(N % 10);
+     console.log(a);
+     N = N / 10;
+   }else 
+    break;
+ }
+
+//  var N=Number(prompt('输入一个整数：'));
+//  var a,d,e,num;
+//  var b =1;
+//  var c =1;
+//  for(i=1;i<=10;i++){
+//    d =Math.floor(N / c);
+//    if(d == 0){
+//     e = i - 1;//位数
+//    // console.log(e);
+//     break;
+//    }
+//     else
+//     c = c * 10;
+// }
+// for(i=1;i<=e;i++){
+//   num =Math.floor(N % b / c);
+//   console.log(num);
+//   b = b * 10;
+//   c = c / 10;
+//   if(c < 1)
+//   break;
+// }//还存在一些问题改进！！！！！！！！！！！！！
+</script>
+
+  <script id="ch0105/29" type="x">
+    //数字反转 !!!!!!!!!!不是百分百的好
+    var num = Number(prompt('输入一个数字：'));
+    var i;
+    while (num % 10 == 0 && (num >= 10 || num <= -10)){
+      num = num / 10;
+    }
+
+    while (1) {
+      if ((num >= 1 && num <= 9) || (num >= -9 && num <= -1)) {
+        console.log(num);
+        break;
+      }
+        i = num % 10;
+        console.log(i);
+        if(num > 0)
+        num = Math.floor(num / 10);
+        else
+        num = Math.ceil(num / 10);
+        if (num < 1 && num > -1)
+        break;
+      }
+    
+
+  </script>
+
+
+  <script id="ch0105/30" type="x">
+    //含k个3的数(还有更简便的方法~)
+    var i, m, k, num;
+    var count = 0;
+    m = Number(prompt('输入一个正整数m:'));
+    k = Number(prompt('输入一个正整数k:'));
+    if (m % 19 == 0) {
+      while (1) {
+        a = m % 10;
+        if (a == 3)
+          count = count + 1;
+        m = Math.floor(m / 10);
+        if (m < 1)
+          break;
+      }
+      if (count == k)
+        console.log('YES');
+    } else
+      console.log('No');
+  </script>
+
+  <script id="ch0105/31" type="x">
+    // int main()
+    // {
+    // int M,N,h,a,b,s=0;
+    // scanf("%d",&N);//输入N 
+    // scanf("%d",&M);//输入M 
+    // printf("1");//无论多少次，1都是关闭的 ，因为 1只是1的倍数。 
+    // for(h=2;h<=N;h++) 
+    // {
+    // for(a=2;a<=M;a++)	
+    // {
+    // if(h%a==0)//计算h是不是a的倍数。 
+    // s++;//s每次加1，代表一次计算。 
+    // }	
+    // if(s%2==0)//如果s是2的倍数，说明回到初始阶段，灯处于关闭状态。 
+    // printf(",%d",h);//输出h。 
+    // s=0;//将s赋初始值。 
+    // }
+    // return 0;
+    // }
+
+    var m, people, i;
+    var d = 0;
+    m = Number(prompt('你想有几盏灯呢：'));
+    people = Number(prompt('你想有几个人呢：'));
+    console.log(1);
+    for (i <= 2; i <= m; i++) {
+      for (i <= 2; i <= people; i++) {
+        if (m % people == 0) {//如果灯号是人号的倍数，会被执行一次操作
+          d = d + 1;// isLightOn = !isLightOn也可以，不必验证M % P
+        }
+      }
+      if (d % 2 == 0)
+        console.log(i);
+    }
+  </script>
+
+  <script id="ch0105/32" type="x">
+    //求分数序列和
+    var n = +prompt('请输入一个正整数n:（n<=30）');
+    var p = 1;
+    var q = 2;
+    var t,d;
+    var sum=0;
+    for (i = 1;i<=n;i++){
+      sum = sum + q / p;
+      t = q;
+      q = q + p;
+      p = t;
+    }
+    console.log(sum.toFixed(4));
+  </script>
+
+  <script id="ch0105/33" type="x">
+  //计算分数加减表达式的值
+  var Sn = 1;
+  var n;
+  var t;
+  var i;
+  n = Number(prompt('输入一个正整数N：'));
+  for(i=2;i<=n;i++){
+    t = (Math.pow(-1,i-1)) * (1 / i);
+    Sn = Sn + t;
+  }
+  console.log(Sn.toFixed(4));
+  </script>
+
+  <script id="ch0105/34" type="x">
+  var n;
+  var sum = 0;
+  var count;
+  var t =1;
+  var i;
+  var j;
+  n = Number(prompt('输入一个正整数:'));
+  for(i=1;i<=n;i++){
+    count = 1;
+    for(j=1;j<=i;j++){
+      t = j;
+      count = count * t;
+    }
+    sum = sum + count;
+    }
+    console.log(sum);
+  </script>
+
+  <script id="ch0105/35" type="x">
+  //求出e的值
+  var n;
+  var sum = 1;
+  var count;
+  var t =1;
+  var i;
+  var j;
+  n = Number(prompt('输入一个正整数:'));
+  for(i=2;i<=n;i++){
+    count = 1;
+    for(j=1;j<=i-1;j++){
+      t = j;
+      count = count * t;
+    }
+    sum = sum + 1 / count;
+    }
+    console.log(sum.toFixed(10));
+  </script>
+
+  <script id="ch0105/36" type="x">
+  //计算多项式的值
+  var x ,n,i,d;
+  var sum = 1;
+  x = Number(prompt('X'));
+  n = Number(prompt('N'));
+  for(i=1;i<=n;i++){
+    d = Math.pow(x,i);
+    sum = sum + d;
+  }
+  console.log(sum.toFixed(2));
+  </script>
+
+
+  <script id="ch0105/37" type="x">
+    //雇佣兵
+    var ti = 0;
+    var N, X, M, i, d;
+    M = Number(prompt('体力最大值M：'));
+    N = Number(prompt('战斗力N:'));
+    X = Number(prompt('能量元素X:'));
+
+    while (X >= 0) {
+      //战力恢复机制
+      while (ti < M) {
+        X = X - 1;
+        ti = ti + N;
+      }
+      //战力充满
+      ti = M;
+      //去吧，皮卡丘~
+      for (i = 1; i <= M; i++) {
+        d = Math.floor(M / N);
+        N = N + d;
+      }
+       //体力归零
+       ti = 0;
+    }
+    console.log(N);
+  </script>
+
+  <script id="ch0105/38" type="x">
+    //计算多项式的导函数 !!!!!!!!!!没看懂啊
+    var n, i, t, d;
+    n = Number(prompt('输入一个整数:'));
+    if (n == 1)
+      console.log(1);
+    else {
+      for (i = 1; i <= n; i++) {
+        d = Number(prompt(''));
+        t = d * (i - 1);
+        console.log(t);
+      }
+    }
+  </script>
+
+  <script id="ch0105/39" type="x">
+    //与7无关的数!!!!!!!!!!!!!!!!!!
+    var n, i, d, t, f;
+    var count = 0;
+    n = Number(prompt('输入一个正整数:'));
+      for (i = 1;i <= n;i++) { 
+        f = i;//先保留i的原始值 
+        if(f % 7 ==0) //如果没有此if，当i=7时，下面while中if..d=0;并没有执行。d还是=6；
+        d = 0;
+        while (f % 7 != 0) {
+          t = f % 10;
+          if (t == 7) {
+            d = 0;
+            break;
+          }
+          else
+            f = Math.floor(f / 10);
+          if (f <= 1) {
+            d = i;
+            break;
+          }
+        }
+        count = count + d * d;
+      }
+      console.log(count);
+
+
+  </script>
+
+  <script id="ch0105/40" type="x">
+  //数1的个数
+  var n,i,t,f;
+  var count =0;
+  n = Number(prompt('输入一个整数n:'));
+  for(i=1;i<=n;i++){
+    f = i; 
+    while(i>=1){
+     t = f % 10;
+     if(t == 1)
+     count = count + 1;
+     else
+     count = count + 0;
+     f = Math.floor(f / 10);
+     if(f < 1)
+     break;
+    }
+  }
+  console.log(count);
+  </script>
+
+
+  <script id="ch0105/41" type="x">
+  //数字统计
+  var i,t,f,L,R;
+  var count=0;
+  L= Number(prompt('输入一个最小数:'));
+  R= Number(prompt('输入一个最大的数:'));
+  for(i=L;i<=R;i++){
+    f = i;
+    while(1){
+    t = f % 10;
+    if(t==2)
+    count = count + 1;
+    f = Math.floor(f / 10);
+    if(f <= 1)
+    break;
+    }
+  }
+  console.log(count);
+  </script>
+
+  <script id="ch0105/42" type="x">
+  //画矩形  
+  var w,w1,h,heart,i,j,str,count,count1;
+  var sum;
+  h = Number(prompt('要画的长方形的高：'));
+  w = Number(prompt('要画的长方形的宽:'));
+  str = prompt('长方形的形状:');
+  heart = Number(prompt('选择实心还是空心？'));
+  
+  if(heart == 1){
+  for(i=1;i<=h;i++){
+    count = str;
+    sum = 1;
+    while(1){
+     count = count + str;
+     sum = sum + 1;
+     if(sum == w){
+       console.log(count);
+       break;
+     }
+    }
+  } 
+  }
+  else if(heart == 0){
+   for(i=1;i<=h;i++){
+    count = str;
+    sum = 1;
+    count1 = '';
+    w1 = w - 2;
+    if(i>1 && i<h){
+    for(j=1;j<w1;j++){
+      count1 = count1 + '';
+    }
+    console.log(str + count1 + str);
+    }
+    else if(i==1 || i==h){
+      for(j=1;j<w;j++){
+      count = count + str;
+      }
+      console.log(count);
+    }
+   }
+  }
+
+
+  
+  </script>
+
+
+  <script id="ch0105/43" type="x">
+//质因数分解
+ var i,t,max,n;
+ n=Number(prompt('输入一个正整数n(6<=n<=1000):'));
+ for(i=2;i<n;i++){
+   if(n % i ==0)
+    max = i;
+ }
+ console.log(max);
 
 </script>
 
-</head>
+  <script id="ch0105/44" type="x">
+//第n小质数!!!!!!!!!!!!
+var n,i,j;
+var count;
+var t = 1;
+n=Number(prompt(''));
+for(i=3;i<=999;i++){
+   count = 0;
+   for(j=2;j<i;j++){ 
+      if(i !== j && i % j !==0)
+       count = count + 0;
+       else if(i !== j && i % j ==0)
+       count = count + 1;
+   }
+   if(count == 0)
+   t = t + 1;
+   if(n == t){
+   console.log(i);
+   break;
+   }
+}
+</script>
 
+  <script id="ch0105/45" type="x">
+//金币
+var n,i,j;
+var gold=0;
+var count=0;
+n = Number(prompt('输入一个正整数n：'));
+for(i=1;1<=n;i++){
+  for(j=1;j<=i;j++){
+    count = count + 1; //第几天
+    gold = gold + i; //金币总数
+  }
+  if(n==count){
+    console.log(gold);
+    break;
+  }
+}
+
+</script>
+
+  <script id="7" type="x">
+//输入一个数，输出其是否是7的倍数或各个位上是否有7（25：NO，27：YES，21：YES)
+//一次判断两个条件真假，最后再相与
+var i,truth,n,count,t,f;
+var truth1=0;
+var truth2=0;
+n=Number(prompt('输入一个正整数n：'));
+ f = n;
+while(1){
+  t = f % 10;
+  if(t==7)
+  truth1 = 1;
+  f = f / 10;
+  if(f<1)
+  break;
+}
+if(n % 7==0)
+truth2 = 1;
+
+if(truth1==1 || truth2==1)
+console.log(n+ ':' + 'YES');
+else
+console.log(n + ':' + 'No');
+</script>
+
+  <script id="sort">
+    //给定3个数，从小到大依次输出
+    
+    var i, n, t;
+    var max, min;
+
+  </script>
+
+  <script id="narcissistic" type="x">
+//判断一个数是否为水仙花数
+var i,n,t,f;
+var sum = 0;
+n = Number(prompt('输入一个数:'));
+f = n;
+if(n<100 || n > 999)
+console.log('No!');
+while(1){
+t = f % 10;
+sum = sum + t * t * t;
+f = Math.floor(f / 10);
+if(f < 1){
+ if(sum==n)
+ console.log('YES');
+ else
+ console.log('No');
+ break;
+}
+}
+</script>
+
+  <script id="narcissistics">
+    //1000以内的水仙花数
+    var i, n, t, f;
+    var sum;
+    for (i = 100; i <= 1000; i++) {
+      f = i;
+      sum=0;
+      while (1) {
+        t = f % 10;
+        sum = sum + t * t * t;
+        f = Math.floor(f / 10);
+        if (f < 1) 
+            break;     
+      }
+      if (sum == i)
+       console.log(i);
+    }
+  </script>
+
+<script id="palindrom" type="x">
+  //回文数
+//1234321!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+var i,n,t,d;
+var t =0;
+n = Number(prompt('输入一个数n:'));
+d = n;
+while(1){
+ t = t * 10 + d % 10;
+ d =Math.floor(d / 10);
+ if(d<1)
+ break;
+}
+if(n==t)
+console.log('YES');
+else
+console.log('No');
+</script>
+
+<script id="complete-number" type="x">
+  //求一个数的完全数；
+  //6=1+2+3(除了自身都是6的约数)
+var n,i;
+var sum=0;
+n =Number(prompt('输入一个数n:'));
+for(i=1;i<n;i++){
+if(n % i ==0)
+sum = sum + i;
+}
+if(n == sum)
+console.log('YES');
+else
+console.log('No');
+</script>
+
+<script id="complete-numbers" type="x">
+  //1000以内的完全数
+var n,i,j;
+var sum;
+for(i=1;i<=1000;i++){
+  sum = 0;
+  for(j=1;j<i;j++){
+    if(i % j ==0)
+    sum = sum + j;
+  }
+  if(sum == i)
+  console.log(i);
+}
+</script>
+
+
+<script id="prime" type="x">
+  //素数 只能被1 和本身整除
+  var i,n;
+  var sum=0;
+  n = Number(prompt('输入一个数n:'));
+  if(n==1)
+  console.log('Yes');
+  for(i=2;i<n;i++){
+   if(n % i !=0)
+   sum = sum + 0;
+   else
+   sum = sum + 1;
+  }
+  if(sum==0)
+  console.log('YES')
+  else
+  console.log('No');
+</script>
+
+<script id="primes" type="x">
+  //1000以内素数
+ var i,n,j;
+ var sum;
+ for(i=1;i<=1000;i++){
+  sum=0;
+  for(j=2;j<i;j++){
+    if(i % j !=0)
+    sum = sum + 0;
+    else 
+    sum = sum + 1;
+  }
+  if(sum==0)
+  console.log(i);
+ }
+</script>
+
+<script id="lcf&lcm">
+//最大公约数和最小公倍数 !!!!!!!!(不正确)
+//最大公约数正确
+var m,n,i,a1,a2,t,max,min,d;
+var count=0;
+var sum = 0;
+m = Number(prompt('输入一个正整数:'));
+n = Number(prompt('输入一个正 整数:'));
+a1 = m;
+a2 = n;
+//如果两个中任一个无法整除2，则结果都为两者乘积；
+if(a1 % 2 !=0 || a2 % 2 !=0){
+  max = a1 * a2;
+  min = a1 * a2;
+}else{
+
+while(a1 % 2==0){
+a1 = a1 / 2;
+count = count + 1;
+if(a1 < 1)
+break;
+}
+while(a2 % 2==0){
+  a2 = a2 / 2;
+  sum = sum + 1;
+  if(a2 < 1)
+  break;
+}
+if(count>=sum){
+d = Math.pow(2,count -1);
+max = Math.pow(2,sum);
+min = Math.pow(2,sum) * a1 * d *a2;
+}
+else if(sum > count){
+d = Math.pow(2,sum - 1);
+max = Math.pow(2,count);
+min = Math.pow(2,count) * a1 * a2 * d;
+}
+}
+console.log(max,min);
+
+</script>
+<script id="sqrt">
+  var m;
+  var n =Number(prompt('输入一个数:'));
+  m =Math.sqrt(n);
+  console.log(m.toFixed(3));
+
+</script>
 <body>
 
 </body>
