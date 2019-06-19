@@ -921,7 +921,7 @@ console.log(count);
 
   <script id="ch0105/25" type="x">
 //求特殊自然数 ！！！！！！！！！！！！大写小写要分清！！！！！！！！！！！！！
-var i,x,a,b;
+var i,x,a,b,t,f;
 var a1,a2,a3;
 var b1,b2,b3;
 for(i=1;i<=999;i++){
@@ -935,9 +935,12 @@ for(i=1;i<=999;i++){
    b2 =Math.floor( (b % 100) / 100);
    b3 =b % 10;
    if(a>=100 && a <=999 && b>=100 && b<=999 && a1==b3 && a2 == b2 && a3==b1){
-    console.log(i);
+    t = Number(i.toString(7));
+    f = Number(i.toString(9))
+    console.log(i,t,f);
 }
 }
+
 </script>
 
   <script id="ch0105/26" type="x">
@@ -1059,7 +1062,7 @@ for(i=1;i<=9999;i++){
       console.log('No');
   </script>
 
-  <script id="ch0105/31" type="x">
+  <script id="ch0105/31" type="">
     // int main()
     // {
     // int M,N,h,a,b,s=0;
@@ -1085,10 +1088,11 @@ for(i=1;i<=9999;i++){
     m = Number(prompt('你想有几盏灯呢：'));
     people = Number(prompt('你想有几个人呢：'));
     console.log(1);
-    for (i <= 2; i <= m; i++) {
-      for (i <= 2; i <= people; i++) {
-        if (m % people == 0) {//如果灯号是人号的倍数，会被执行一次操作
-          d = d + 1;// isLightOn = !isLightOn也可以，不必验证M % P
+    for (i = 2; i <= m; i++) {
+      d=0;
+      for (j = 2; j <= people; j++) {
+        if (i % j == 0) {//如果灯号是人号的倍数，会被执行一次操作
+         d= d + 1;// isLightOn = !isLightOn也可以，不必验证M % P
         }
       }
       if (d % 2 == 0)
@@ -1154,9 +1158,9 @@ for(i=1;i<=9999;i++){
   var i;
   var j;
   n = Number(prompt('输入一个正整数:'));
-  for(i=2;i<=n;i++){
+  for(i=1;i<=n;i++){
     count = 1;
-    for(j=1;j<=i-1;j++){
+    for(j=1;j<=i;j++){
       t = j;
       count = count * t;
     }
