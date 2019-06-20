@@ -1062,7 +1062,7 @@ for(i=1;i<=9999;i++){
       console.log('No');
   </script>
 
-  <script id="ch0105/31" type="">
+  <script id="ch0105/31" type="x">
     // int main()
     // {
     // int M,N,h,a,b,s=0;
@@ -1424,12 +1424,42 @@ else
 console.log(n + ':' + 'No');
 </script>
 
-  <script id="sort">
+  <script id="sort" type="">
     //给定3个数，从小到大依次输出
-    
-    var i, n, t;
-    var max, min;
+    var i,mid,max,min,n,t;
+    //解法一(暴力解法)：
+    var a1,a2,a3;
+    a1 = Number(prompt(''));
+    max = a1;
+    a2 = Number(prompt(''));
+    if(a2 > a1){
+      t = max;
+      max = a2;
+      mid =t;
+    }else
+     mid = a2;
+     a3 = Number(prompt(''));
+     if(a3 > max){
+       min = mid;
+       mid = max;
+       max = a3;
+     }else if(a3 < max && a3 > mid){
+       min = mid;
+       mid = a3;
+     }else if(a3 < mid)
+     min = a3;
+     console.log(min,mid,max);
+   
 
+  //解法二(适用于多个数)：
+   var t,i;
+   var a =Array(t-1);
+   t = Number(prompt('有几个数呢？'));
+    for(i=0;i<t;i++){
+      n=Number(prompt('输入一个整数n:'));
+      var a[i] = n;
+    }
+      console.log(a);
   </script>
 
   <script id="narcissistic" type="x">
@@ -1454,7 +1484,7 @@ if(f < 1){
 }
 </script>
 
-  <script id="narcissistics">
+  <script id="narcissistics" type="x">
     //1000以内的水仙花数
     var i, n, t, f;
     var sum;
@@ -1602,15 +1632,20 @@ min = Math.pow(2,count) * a1 * a2 * d;
 console.log(max,min);
 
 </script>
-<script id="sqrt">
+<script id="sqrt" type="X">
   var m;
   var n =Number(prompt('输入一个数:'));
   m =Math.sqrt(n);
   console.log(m.toFixed(3));
 
 </script>
-<body>
 
+<script>
+var fruit = ['banana','apple'];
+var first = fruit[0];
+var last = fruit[fruit.length - 1];
+</script>
+<body>
 </body>
 
 </html>
