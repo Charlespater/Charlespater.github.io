@@ -4,7 +4,7 @@ var charlespater = {
     },
   fill: function(ary,value,start=0,end = ary.length-1){
       for(let i=start;i<=end;i++){
-        ary.push(value)
+        ary[i]=value;
       }
       return ary;
     }
