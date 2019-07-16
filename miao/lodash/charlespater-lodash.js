@@ -2,8 +2,8 @@ var charlespater = {
     compact: function(ary) {
       return ary.filter(it => it)
     },
-  fill: function(ary,value,start=0,end = ary.length-1){
-      for(let i=start;i<=end;i++){
+  fill: function(ary,value,start=0,end = ary.length){
+      for(let i=start;i<end;i++){
         ary[i]=value;
       }
       return ary;
