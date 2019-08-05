@@ -65,7 +65,7 @@ function difference(ary, ...val) {
       })
     } else {
       values.push(iteratee)
-      return difference(array, ...values);
+      return _.difference(array, ...values);
     }
   },
   index:function(ary,value){
