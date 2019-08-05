@@ -20,28 +20,58 @@ var charlespater = {
   },
   concat:function(ary,value){
     for(let i=1;i<arguments.length;i++){
+      if(value instanceof Array){
     ary.push(...arguments[i]);
+      }else{
+        ary.push(arguments[i])
+      }
     }
-    return ary;
+    return ary
   },
-  difference:function(ary,value){
-    for(let i=0;i<ary.length;i++){
-      for(let j=0;j<value.length;j++){
-        if(ary[i]==value[j]){
-          ary.splice(i,1);
-          i--;
+  difference:function(ary,...value){
+    return ary.filter(item=>{
+      let ary2=value.flat();
+      return ary2.every(idx=>{
+        return idx!==item;
+      })
+    })
+  },
+/* 
+function difference(ary, ...val) {
+    return ary.filter((item) => {
+        if (val.flat().indexOf(item) === -1) {
+            return item
         }
-      }
+    })
+
+}
+*/
+  differenceBy:function(array, ...values) {
+    var iteratee = values.pop();
+    if (typeof iteratee == 'function') {
+      array = array.map(item => iteratee(item));
+      var ary2 = _.flattenDeep(values).map(item => iteratee(item));
+      return array.filter(item => {
+        if (ary2.indexOf(item) == -1)
+          return item;
+      })
     }
-    return ary;
+    if (typeof iteratee == 'string') {
+      array = array.map(item => item[iteratee]);
+      var ary2 = _.flattenDeep(values).map(item => item[iteratee]);
+      return array.filter(item => {
+        if (ary2.indexOf(item) == -1)
+          return item;
+      })
+    } else {
+      values.push(iteratee)
+      return difference(array, ...values);
+    }
   },
-  differenceBy:function(ary,value,iteratee){
-    var result=[];
+  index:function(ary,value){
     for(let i=0;i<ary.length;i++){
-      if(iteratee(ary[i])!=iteratee(value[i])){
-        result.push(ary[i]);
-      }
+      if(ary[i]==value)
+      return i;
     }
-    
   }
   };
