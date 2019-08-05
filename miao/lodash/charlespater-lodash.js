@@ -49,18 +49,20 @@ function difference(ary, ...val) {
   differenceBy:function(array, ...values) {
     var iteratee = values.pop();
     if (typeof iteratee == 'function') {
-      array = array.map(item => iteratee(item));
+      //array = array.map(item => iteratee(item));
       var ary2 = _.flattenDeep(values).map(item => iteratee(item));
       return array.filter(item => {
-        if (ary2.indexOf(item) == -1)
+        var temp =iteratee(item)
+        if (ary2.indexOf(temp) == -1)
           return item;
       })
     }
     if (typeof iteratee == 'string') {
-      array = array.map(item => item[iteratee]);
+      //array = array.map(item => item[iteratee]);
       var ary2 = _.flattenDeep(values).map(item => item[iteratee]);
       return array.filter(item => {
-        if (ary2.indexOf(item) == -1)
+        var temp =item[iteratee];
+        if (ary2.indexOf(temp) == -1)
           return item;
       })
     } else {
