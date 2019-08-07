@@ -70,6 +70,9 @@ function difference(ary, ...val) {
       return _.difference(array, ...values);
     }
   },
+  differenceWith: function(ary,...value){
+    return _.isEqual(ary,...value)
+  },
   index:function(ary,value){
     for(let i=0;i<ary.length;i++){
       if(ary[i]==value)
